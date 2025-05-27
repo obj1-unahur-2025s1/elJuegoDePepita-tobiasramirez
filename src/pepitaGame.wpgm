@@ -6,13 +6,14 @@ import wollok.game.*
 
 program PepitaGame {
 	game.title("Pepita")
-	game.height(10)
-	game.width(10)
+	game.height(15)
+	game.width(20)
 	game.boardGround("fondo2.jpg")
 
 	// Hacer los arreglos para que pueda ejecutar tutorial1.iniciar()
 
 	game.showAttributes(pepita) //Debug
+	tutorial1.iniciar()
 
 	game.start()
 }

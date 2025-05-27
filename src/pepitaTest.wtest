@@ -15,12 +15,12 @@ describe "Tests de Pepita" {
 //	}
 
 	test "Al volar pepita pierde energia" {
-		pepita.vola(1)
+		pepita.vuela(1)
 		assert.equals(91, pepita.energia())
 	}
 
 	test "Al volar mucho pepita queda cansada" {
-		pepita.vola(100)
+		pepita.vuela(100)
 		assert.that(pepita.estaCansada())
 	}
 

@@ -4,22 +4,22 @@ import wollok.game.*
 object pepita {
 
 	var property energia = 100
-	var property position = game.origin()
+	var property position = game.at(0,0)
 
 	method image() {
-		return if (self.estaEnElNido()) "pepita-grande.png" else "pepita.png"
+		return if (self.estaEnElNido()) "pepita-grande.png" else if(self.atrapada()) "pepita-gris.png" else "pepita.png"
 	}
 
 	method come(comida) {
 		energia = energia + comida.energiaQueOtorga()
 	}
 
-	method vola(kms) {
+	method vuela(kms) {
 		energia = energia - kms * 9
 	}
 
 	method irA(nuevaPosicion) {
-		self.vola(position.distance(nuevaPosicion))
+		self.vuela(position.distance(nuevaPosicion))
 		position = nuevaPosicion
 	}
 
@@ -27,10 +27,12 @@ object pepita {
 		return energia <= 0
 	}
 
-	method estaEnElNido() {
+	method estaEnElNido() = self.position() == nido.position()
+	method atrapada() =self.position() == silvestre.position()
+	
 		
-		return false // Reemplazar por el código correcto
-	}
+		
+	
 
 }
 
