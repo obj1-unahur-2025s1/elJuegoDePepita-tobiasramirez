@@ -13,7 +13,8 @@ program PepitaGame {
 	// Hacer los arreglos para que pueda ejecutar tutorial1.iniciar()
 
 	game.showAttributes(pepita) //Debug
-	tutorial1.iniciar()
+	tutorial2.iniciar()
+	
 
 	game.start()
 }
